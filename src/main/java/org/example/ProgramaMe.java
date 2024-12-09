@@ -14,19 +14,43 @@ public class ProgramaMe {
 
     public static boolean casoDePrueba() {
 
+        char[] abecedario= vectorAbecedario();
         String linea = entrada.nextLine();
         int[] vector = vectorSplit(linea);
-        System.out.println(Arrays.toString(vector));
+
+        String salida = "";
+        String salidainvertida= "";
+        String salidacompleta="";
 
         if (vector.length == 1 && vector[0] == 0) {
             return false;
+        } else if (vector[vector.length-1]!=0) {
+            return true;
         }
 
-        for (int i = 0; i < vector.length; i++) {
-            cifradoExcel(vector[i]);
+        for (int i = 0; i < vector.length-1; i++) {
+            int cociente = vector[i];
+
+            while(cociente>26){
+                salida += abecedario[cociente%26-1];
+                cociente=division(cociente);
+            }
+            salida += abecedario[cociente-1];
+
+            salidainvertida=delReves(salida);
+            salidacompleta=salidacompleta.concat(salidainvertida + " ");
+            salida="";
         }
+
+        System.out.println(salidacompleta);
 
         return true;
+    }
+
+
+    public static String formatoEntrada(String cadena){
+        
+        return;
     }
 
 
@@ -40,9 +64,33 @@ public class ProgramaMe {
         return vectorInt;
     }
 
-    public static String cifradoExcel(int dato){
-        char[] abecedario = new char[26];
+    public static char[] vectorAbecedario(){
+        char[] abecedario = new char [26];
+        for (int i = 0; i < abecedario.length; i++) {
+            abecedario[i]= (char) ('A' + i );
+        }
+
+        return abecedario;
     }
+
+    public static int division(int cociente){
+        cociente=cociente/26;
+        return cociente;
+    }
+
+    public static String delReves(String palabra){
+        String[] vectorpalabra = palabra.split("");
+        String palabrainvertida = "";
+
+        for (int i = vectorpalabra.length-1; i >= 0; i--) {
+            palabrainvertida=palabrainvertida.concat(vectorpalabra[i]);
+        }
+
+        return palabrainvertida;
+    }
+
+
+
 }
 
 
