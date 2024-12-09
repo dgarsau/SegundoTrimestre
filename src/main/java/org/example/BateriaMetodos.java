@@ -138,6 +138,7 @@ public class BateriaMetodos {
         Arrays.sort(vector);
         float menor = vector[0];
         System.out.println(menor);
+        return 0;
     }
 
 }
