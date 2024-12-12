@@ -1,15 +1,31 @@
 package org.example;
 
+/**
+ * CIFRADO EXCEL
+ * @author Daniel García Saugar
+ * @version 1.0
+ */
+
 public class ProgramaMe {
 
     static java.util.Scanner entrada;
 
+    /**
+     * Función principal, llama a casoDePrueba mientras devuelva true.
+     * @param args
+     */
     public static void main(String[] args) {
         entrada = new java.util.Scanner(System.in);
         while (casoDePrueba()) {
         }
     }
 
+    /**
+     * Desde aquí se llaman a las demás funciones
+     *
+     * @return --devuelve un booleano que depende de la entrada del usuario
+     *         --si la entrada es solo un 0, finaliza
+     */
     public static boolean casoDePrueba() {
 
         char[] abecedario= vectorAbecedario();
@@ -52,6 +68,14 @@ public class ProgramaMe {
         return true;
     }
 
+    /**
+     * Esta función convierte la entrada del usuario en un vector de tipo long mediante un
+     * split y un bucle for. También controla que la entrada sea del tipo correcto, si no
+     * lo es, finaliza el programa.
+     *
+     * @param cadena
+     * @return vectorInt
+     */
     public static long[] vectorSplit(String cadena){
         String[] vectorString = cadena.split(" ");
         long[] vectorInt = new long[vectorString.length];
@@ -67,6 +91,13 @@ public class ProgramaMe {
         return vectorInt;
     }
 
+    /**
+     * Esto genera un vector de tipo char con las letras del abecedario, usaré su posición
+     * para asignar letras dependiendo del resto del número. El tipo char me permite sumar
+     * números.
+     *
+     * @return abecedario
+     */
     public static char[] vectorAbecedario(){
         char[] abecedario = new char [26];
         for (int i = 0; i < abecedario.length; i++) {
@@ -75,6 +106,12 @@ public class ProgramaMe {
         return abecedario;
     }
 
+
+    /**
+     *
+     * @param cociente
+     * @return cociente
+     */
     public static long division(long cociente){
         cociente=cociente/26;
         return cociente;
