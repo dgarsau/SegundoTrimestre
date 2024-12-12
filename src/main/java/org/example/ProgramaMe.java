@@ -35,6 +35,7 @@ public class ProgramaMe {
                 int resto = (int) (cociente%26);
                 if(resto==0){
                     resto=26;
+                    cociente--;
                 }
                 cociente=division(cociente);
                 salida += abecedario[resto-1];
@@ -91,7 +92,3 @@ public class ProgramaMe {
     }
 
 }
-
-
-
-
