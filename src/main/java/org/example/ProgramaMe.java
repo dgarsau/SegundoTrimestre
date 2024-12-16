@@ -29,7 +29,6 @@ public class ProgramaMe {
 
         char[] abecedario= vectorAbecedario();
         String linea = entrada.nextLine();
-
         long[] vector = vectorSplit(linea);
 
         if(vector.length==0 || (vector.length==1 && vector[0]==0)){
@@ -51,7 +50,7 @@ public class ProgramaMe {
                 int resto = (int) (cociente%26);
                 if(resto==0){
                     resto=26;
-                    cociente--; //Esto es necesario ya que en todas las divisiones se redondea hacia abajo menos en este caso que no redondea.
+                    cociente--;
                 }
                 cociente=division(cociente);
                 salida += abecedario[resto-1];
