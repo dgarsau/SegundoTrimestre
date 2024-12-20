@@ -6,7 +6,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProgramaMeTest {
 
-
+    /**
+     * Pruebas para ProgramaMe.vectorSplit
+     */
     @Test
     void vectorSplit() {
 
@@ -21,7 +23,11 @@ class ProgramaMeTest {
         );
     }
 
-    /* Aquí no hace falta probar con letras porque la entrada está controlada en mi programa por otro método que se ejecuta antes, no pruebo entre 0 porque el programa no llega a la división si es 0*/
+    /**
+     *Pruebas para ProgramaMe.division
+     *Aquí no hace falta probar con letras porque la entrada está controlada en mi programa por otro método que se ejecuta antes, no pruebo entre 0 porque el programa no llega a la división si es 0
+     */
+
     @Test
     void division() {
 
@@ -33,7 +39,10 @@ class ProgramaMeTest {
         );
     }
 
-    /* Como estamos operando con Strings, le dará la vuelta en todos los casos*/
+    /**
+     * Pruebas para ProgramaMe.delReves
+     * Como estamos operando con Strings le dará la vuelta en todos los casos, no debería fallar independientemente de la entrada.
+     */
     @Test
     void delReves() {
 

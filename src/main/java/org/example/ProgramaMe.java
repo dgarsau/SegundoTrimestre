@@ -31,7 +31,7 @@ public class ProgramaMe {
         String linea = entrada.nextLine();
         long[] vector = vectorSplit(linea);
 
-        if(vector.length==0 || (vector.length==1 && vector[0]==0)){
+        if(vector.length==0 || (vector.length==1 && vector[0]==0 || vector[vector.length-1]!=0)){
             return false;
         }
 
@@ -70,8 +70,8 @@ public class ProgramaMe {
     /**
      * Este método convierte la entrada del usuario en un vector de tipo long mediante un split y un bucle for. También controla que la entrada sea del tipo correcto, si no lo es, finaliza el programa devolviendo un vector sin tamaño.
      *
-     * @param cadena
-     * @return vectorInt
+     * @param cadena - recibe una cadena de texto de tipo string.
+     * @return vectorLong - devuelve un vector de tipo Long generado con un parseLong y un split de la cadena recibida.
      */
     public static long[] vectorSplit(String cadena){
         String[] vectorString = cadena.split(" ");
@@ -92,7 +92,7 @@ public class ProgramaMe {
     /**
      * Esto genera un vector de tipo char con las letras del abecedario, usaré su posición para asignar letras dependiendo del resto del número. El tipo char me permite sumar números.
      *
-     * @return abecedario
+     * @return abecedario - devuelve un vector con 26 de longitud con las letras del abecedario por orden.
      */
     public static char[] vectorAbecedario(){
         char[] abecedario = new char [26];
@@ -106,8 +106,8 @@ public class ProgramaMe {
     /**
      * En esta función se divide el número recogido entre 26.
      *
-     * @param cociente
-     * @return cociente
+     * @param cociente - recibe un número de tipo long.
+     * @return cociente - devuelve el número recibido dividido entre 26.
      */
     public static long division(long cociente){
         cociente=cociente/26;
@@ -117,8 +117,8 @@ public class ProgramaMe {
     /**
      * En esta función le doy la vuelta a una variable de tipo string convertiendola en un array con un split y recorriéndola.
      *
-     * @param palabra
-     * @return
+     * @param palabra - recibo una variable de tipo string.
+     * @return palabrainvertida - se devuelve la misma palabra del revés.
      */
     public static String delReves(String palabra){
         String[] vectorpalabra = palabra.split("");
@@ -132,6 +132,3 @@ public class ProgramaMe {
     }
 
 }
-
-
-/* Se entrega el enlace de GitHub un informe de prácticas (pruebas de JUnit aquí), el javadoc exportado en html (.zip) y el tutorial hablando*/
